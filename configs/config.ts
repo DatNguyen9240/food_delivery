@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv';
 import * as path from 'path';
 
 // Load .env ở gốc project
-dotenv.config({ path: path.resolve(__dirname, '../../../../.env') });
+dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 
 export const dbConfig: TypeOrmModuleOptions = {
   type: 'mssql',
@@ -19,3 +19,5 @@ export const dbConfig: TypeOrmModuleOptions = {
     trustServerCertificate: true,
   },
 };
+
+console.log('Database configuration:', dbConfig);

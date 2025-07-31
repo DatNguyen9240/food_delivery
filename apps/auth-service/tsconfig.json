@@ -3,6 +3,6 @@
   "compilerOptions": {
     "outDir": "../../dist/apps/auth-service"
   },
-  "include": ["src/**/*", "../notification-service/jwt.strategy.ts", "../../types/user.entity.ts", "../../configs/config.ts"],
+  "include": ["src/**/*", "../notification-service/jwt.strategy.ts", "../../types/user.entity.ts", "../../configs/config.ts", "../../utils/redis-client.ts"],
   "exclude": ["node_modules", "dist"]
 } 

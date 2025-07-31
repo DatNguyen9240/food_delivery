@@ -19,16 +19,21 @@ export class AuthServiceController {
   @ApiResponse({ status: 200, description: 'Login successful' })
   async login(@Body() body: { email: string; password: string }) {
     console.log('[DEBUG] login controller input:', body);
-    const user = await this.authService.validateUser(body.email, body.password);
-    if (!user) {
+    const result = await this.authService.validateUser(
+      body.email,
+      body.password,
+    );
+    if (!result.user) {
       console.log('[DEBUG] login controller: Invalid credentials');
       return { message: 'Invalid credentials' };
     }
-    // Tạo token JWT
-    const jwt = require('jsonwebtoken');
-    const token = jwt.sign(user, 'your-secret', { expiresIn: '1h' }); // Thay 'your-secret' bằng secret thực tế
-    console.log('[DEBUG] login controller: Login successful', user);
-    return { message: 'Login successful', user, token };
+    console.log('[DEBUG] login controller: Login successful', result.user);
+    return {
+      message: 'Login successful',
+      user: result.user,
+      accessToken: result.accessToken,
+      refreshToken: result.refreshToken,
+    };
   }
 
   @Post('register')
