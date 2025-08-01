@@ -1,4 +1,14 @@
 import { Test, TestingModule } from '@nestjs/testing';
+jest.mock('redis', () => ({
+  createClient: jest.fn().mockReturnValue({
+    connect: jest.fn(),
+    on: jest.fn(),
+    get: jest.fn(),
+    set: jest.fn(),
+    quit: jest.fn(),
+    disconnect: jest.fn(),
+  }),
+}));
 import { AuthService } from '../apps/auth-service/src/auth-service.service';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { User } from '../libs/entities/user.entity';
