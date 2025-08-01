@@ -19,4 +19,14 @@ export const proxyRoutes = [
       }),
     ],
   },
+  {
+    route: '/orders',
+    middleware: [
+      authMiddleware,
+      createProxyMiddleware({
+        target: 'http://localhost:3004',
+        changeOrigin: true,
+      }),
+    ],
+  },
 ];

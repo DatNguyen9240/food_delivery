@@ -3,7 +3,7 @@ import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { NotificationService } from './notification-service.service';
 import { NotificationServiceController } from './notification-service.controller';
-import { JwtStrategy } from '../../../libs/jwt/jwt.strategy'; // Import JwtStrategy from the shared library
+import { JwtStrategy } from '@libs/jwt/jwt.strategy'; // Import JwtStrategy from the shared library
 
 @Module({
   imports: [

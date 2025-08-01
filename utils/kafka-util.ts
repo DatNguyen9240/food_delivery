@@ -1,4 +1,4 @@
-import { kafka } from '../thirst_partys/kafka-client';
+import { kafka } from '../third_partys/kafka-client';
 
 export async function sendOtpKafka(email: string, otp: string, user: any) {
   const producer = kafka.producer();

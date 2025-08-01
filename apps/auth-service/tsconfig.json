@@ -1,8 +1,11 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/apps/auth-service"
+    "declaration": false,
+    "outDir": "../../dist/apps/auth-service",
   },
-  "include": ["src/**/*", "../notification-service/jwt.strategy.ts", "../../types/user.entity.ts", "../../configs/config.ts", "../../utils/redis-client.ts"],
+  "include": [
+    "src/**/*"
+  ],
   "exclude": ["node_modules", "dist"]
 } 

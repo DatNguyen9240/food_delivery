@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { User } from '../../../types/user.entity';
-import { sendOtpKafka } from '../../../utils/kafka-util';
+import { User } from '@libs/entities/user.entity';
+import { sendOtpKafka } from '@utils/kafka-util';
 
-import { hashPassword, comparePassword } from '../../../utils/password-util';
-import { generateOtp } from '../../../utils/otp-util';
-import { redis } from '../../../thirst_partys/redis-client'; // Import Redis client
+import { hashPassword, comparePassword } from '@utils/password-util';
+import { generateOtp } from '@utils/otp-util';
+import { redis } from '@thirdParty/redis-client'; // Import Redis client
 
 @Injectable()
 export class AuthService {

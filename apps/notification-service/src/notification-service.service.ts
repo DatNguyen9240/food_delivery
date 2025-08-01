@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import * as nodemailer from 'nodemailer';
-import { kafka } from '../../../thirst_partys/kafka-client';
+import { kafka } from '@thirdParty/kafka-client';
 
 @Injectable()
 export class NotificationService {
