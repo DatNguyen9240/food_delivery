@@ -61,7 +61,8 @@ export class AuthServiceController {
       return { message: 'Register successful', user };
     } catch (e) {
       console.log('[DEBUG] register controller: Error', e);
-      return { message: e.message };
+      const message = e instanceof Error ? e.message : String(e);
+      return { message };
     }
   }
 }

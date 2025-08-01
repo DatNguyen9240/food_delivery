@@ -8,4 +8,4 @@ async function bootstrap() {
   await app.listen(3004);
   console.log('Order Service is running on port 3004');
 }
-bootstrap();
+void bootstrap();

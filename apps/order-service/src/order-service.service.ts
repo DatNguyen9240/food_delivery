@@ -15,7 +15,7 @@ export class OrderService {
   async create(dto: CreateOrderDto): Promise<Order> {
     const order = this.orderRepo.create({
       ...dto,
-      status: dto.status as OrderStatus,
+      status: dto.status,
     });
     return this.orderRepo.save(order);
   }
