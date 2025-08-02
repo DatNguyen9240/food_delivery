@@ -5,7 +5,7 @@ import {
   CreateDateColumn,
 } from 'typeorm';
 import { ApiProperty } from '@nestjs/swagger';
-import { OrderStatus } from '../../constants/order-status.enum'; // Tách Enum riêng nếu muốn
+import { OrderStatus } from '@constants/order-status.enum'; // Tách Enum riêng nếu muốn
 
 @Entity()
 export class Order {
