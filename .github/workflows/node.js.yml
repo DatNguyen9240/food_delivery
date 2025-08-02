@@ -30,3 +30,12 @@ jobs:
 
       - name: Run coverage
         run: npm run test:cov
+
+      - name: Build Docker images for all services
+        run: |
+          for service in apps/*; do
+            if [ -f "$service/Dockerfile" ]; then
+              name=$(basename $service)
+              docker build -t $name -f $service/Dockerfile .
+            fi
+          done

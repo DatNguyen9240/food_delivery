@@ -4,5 +4,13 @@
   "sourceRoot": "src",
   "compilerOptions": {
     "deleteOutDir": true
+  },
+  "monorepo": true,
+  "projects": {
+    "auth-service": {
+      "type": "application",
+      "root": "apps/auth-service",
+      "entryFile": "main"
+    }
   }
 }
