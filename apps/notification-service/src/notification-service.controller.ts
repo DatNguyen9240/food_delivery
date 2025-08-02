@@ -9,6 +9,11 @@ import { ApiTags, ApiBody, ApiResponse } from '@nestjs/swagger';
 export class NotificationServiceController {
   constructor(private readonly notificationService: NotificationService) {}
 
+  @ApiResponse({
+    status: 200,
+    description: 'OTP email sent successfully',
+    type: Object,
+  })
   @ApiBody({
     description: 'Send OTP email',
     type: Object,
