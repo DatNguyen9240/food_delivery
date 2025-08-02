@@ -19,6 +19,9 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Start dependencies
+        run: docker-compose up -d zookeeper kafka redis
+
       - name: Install dependencies
         run: npm install
 
